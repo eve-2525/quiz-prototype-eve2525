@@ -1,0 +1,93 @@
+  <%= render "shared/header" %>
+
+
+    <h2 class="items-sell-title">クイズの情報を入力</h2>
+
+    <%= form_with model: @quiz,local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+
+
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"items-text",  placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          問題文
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :problem, class:"items-text",  placeholder:"問題文（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+
+    <%# 商品の詳細 %>
+    <div class="items-detail">
+      <div class="weight-bold-text">正解1つ　不正解3つ　記入してね♪</div>
+      <div class="form">
+        <div class="weight-bold-text">
+          答え１
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :answer1, class:"items-text" %>
+        <div class="weight-bold-text">
+          答え２
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :answer2, class:"items-text" %>
+      </div>
+    </div>
+    <%# /商品の詳細 %>
+
+    <%# 配送について %>
+    <div class="items-detail">
+      <div class="weight-bold-text question-text">
+      </div>
+      <div class="form">
+        <div class="weight-bold-text">
+          答え３
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :answer3, class:"items-text" %>
+        <div class="weight-bold-text">
+          答え４
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :answer4, class:"items-text" %>
+        <div class="weight-bold-text">
+          答えの解説
+        </div>
+        <%= f.text_area :commentary, class:"items-text" %>
+      </div>
+    </div>
+    <%# /配送について %>
+
+ <%# 販売価格 %>
+    <div class="sell-price">
+      <div class="weight-bold-text question-text">
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>正解の番号(1~4)半角数字1文字で記入してね!</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :answer_number, class:"price-input", placeholder:"例）1" %>
+        </div>
+      </div>
+    </div>
+    <%# /販売価格 %>
+
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "クイズ作成" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  <% end %>
