@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'quizs/index'
+  get 'quizs/create'
   devise_for :users
 
   root to: "quizs#index"
