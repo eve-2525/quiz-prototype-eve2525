@@ -9,7 +9,7 @@
 
 
     <div class="container">
-    <%# 商品名と商品説明 %>
+
     <div class="new-items">
       <div class="weight-bold-text">
         タイトル
@@ -24,9 +24,9 @@
         <%= f.text_area :problem, class:"items-text",  placeholder:"問題文（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /商品名と商品説明 %>
 
-    <%# 商品の詳細 %>
+
+
     <div class="items-detail">
       <div class="weight-bold-text">正解1つ　不正解3つ　記入してね♪</div>
       <div class="form">
@@ -42,9 +42,9 @@
         <%= f.text_area :answer2, class:"items-text" %>
       </div>
     </div>
-    <%# /商品の詳細 %>
 
-    <%# 配送について %>
+
+
     <div class="items-detail">
       <div class="weight-bold-text question-text">
       </div>
@@ -65,9 +65,9 @@
         <%= f.text_area :commentary, class:"items-text" %>
       </div>
     </div>
-    <%# /配送について %>
 
- <%# 販売価格 %>
+
+
     <div class="sell-price">
       <div class="weight-bold-text question-text">
       </div>
@@ -81,14 +81,14 @@
         </div>
       </div>
     </div>
-    <%# /販売価格 %>
 
 
-    <%# 下部ボタン %>
+
+
     <div class="sell-btn-contents">
       <%= f.submit "クイズ作成" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
-    <%# /下部ボタン %>
+
     </div>
   <% end %>
