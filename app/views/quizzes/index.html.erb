@@ -52,51 +52,34 @@
   <body>
 
   <%= render "shared/header" %>
-
-
-
-
 <%# <下記、見出しタイトル> %>
     <div class="container">
       <div class="page-header" id="banner">
         <div class="row my-4">
           <div class="col-12">
-            <h1 class="display-3">オリジナルクイズが作れる！</h1>
+            <h1 class="display-3">オリジナルクイズ！！作れる☆</h1>
 
             <%= link_to new_quiz_path, method: :GET , class: 'purchase-btn' do %>
   <span class='purchase-btn-text'>クイズ投稿</span>
 <% end %>
-
-
             <p class="lead">右下のボタンからクイズを作ってみてね♪</p>
           </div>
         </div>
       </div>
-
-
-
         <div class="row">
           <div class="col-lg-12">
             <div class="page-header">
               <h1 id="navbars">クイズ一覧</h1>
             </div>
-
          </div>
     </div>
-
-
-
       <% @quizzes.reverse.each do |quiz| %>
-
         <%= link_to quiz_path(quiz.id) do %>
-
               <nav class="quiz_index">
           <h3 class='item-name'>
             <%= quiz.title %>
           </h3>
               </nav>
-
-
           <% end %>
      <% end %>
 

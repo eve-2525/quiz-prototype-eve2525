@@ -1,31 +1,28 @@
   <%= render "shared/header" %>
 
-
-    <h2 class="items-sell-title">クイズの情報を入力</h2>
-
+    <div class='transaction-contents'>
+      <div class='transaction-main'>
     <%= form_with model: @quiz,local: true do |f| %>
+
+<h1 class="display-3">クイズの情報を入力☆</h1>
 
     <%= render 'shared/error_messages', model: f.object %>
 
-
     <div class="container">
-
     <div class="new-items">
       <div class="weight-bold-text">
         タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :title, class:"items-text",  placeholder:"タイトル（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :title, class:"items-text",  placeholder:"例)ONE PIECE" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           問題文
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :problem, class:"items-text",  placeholder:"問題文（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+         <%= f.text_area :problem, class:"items-text",  placeholder:"例)ONE PIECの主人公 モンキー・D・ルフィが初めて賞金首になった時の手配書の金額はいくら？"  %>
       </div>
     </div>
-
-
 
     <div class="items-detail">
       <div class="weight-bold-text">正解1つ　不正解3つ　記入してね♪</div>
@@ -34,16 +31,14 @@
           答え１
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :answer1, class:"items-text" %>
+        <%= f.text_area :answer1, class:"items-text",  placeholder:"例)3000万ベリー" %>
         <div class="weight-bold-text">
           答え２
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :answer2, class:"items-text" %>
+        <%= f.text_area :answer2, class:"items-text",  placeholder:"例)1億ベリー" %>
       </div>
     </div>
-
-
 
     <div class="items-detail">
       <div class="weight-bold-text question-text">
@@ -53,20 +48,18 @@
           答え３
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :answer3, class:"items-text" %>
+        <%= f.text_area :answer3, class:"items-text",  placeholder:"例)3億ベリー" %>
         <div class="weight-bold-text">
           答え４
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :answer4, class:"items-text" %>
+        <%= f.text_area :answer4, class:"items-text",  placeholder:"例)15億ベリー" %>
         <div class="weight-bold-text">
-          答えの解説
+          答えの解説(答えを最初に記入してから解説文を書いてね♪)
         </div>
-        <%= f.text_area :commentary, class:"items-text" %>
+        <%= f.text_area :commentary, class:"items-text" ,  placeholder:"例)3000万ベリー！東の海(イーストブルー)の航海で初めて賞金首になりました。1億ベリーはアラバスタでクロコダイルを倒した時、3億ベリーはエニエスロビーでCP9のルッチを倒した時、15億ベリーはカタクリを倒し5番目の皇帝として君臨した時" %>
       </div>
     </div>
-
-
 
     <div class="sell-price">
       <div class="weight-bold-text question-text">
@@ -82,13 +75,11 @@
       </div>
     </div>
 
-
-
-
     <div class="sell-btn-contents">
       <%= f.submit "クイズ作成" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
-
     </div>
+    </div>
+        </div>
   <% end %>
