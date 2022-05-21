@@ -10456,6 +10456,12 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 14px;
 }
 
+.quiz-box{
+  display: flex;
+  flex-direction: column;
+}
+
+
 .item-red-btn {
   text-align: center;
   background-color: #ea352d;
