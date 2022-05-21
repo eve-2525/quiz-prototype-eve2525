@@ -36,6 +36,23 @@ class QuizzesController < ApplicationController
     end
   end
 
+  def edit
+    if current_user.id == @quiz.user_id
+      render :edit
+    else
+      redirect_to action: :index
+    end
+  end
+
+  def update
+    if @quiz.update(quiz_params)
+      redirect_to quiz_path(@quiz.id)
+    else
+      render :edit
+    end
+  end
+
+
   private
 
   def set_quiz
