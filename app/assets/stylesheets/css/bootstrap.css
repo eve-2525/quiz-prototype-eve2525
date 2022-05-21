@@ -4174,7 +4174,6 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1.2rem 1.5rem;
-  margin-bottom: 10px;
 }
 
 .navbar > .container,
@@ -10489,6 +10488,98 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 20px 0px;
   padding: 2vh 10vw;
 }
+
+.transaction-contents {
+  width: 100vw;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
+
+.transaction-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 10vw;
+  height: 100%;
+}
+
+.transaction-title-text {
+  text-align: center;
+  border-bottom: 2px solid #f5f5f5;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.buy-item-info {
+  height: 150px;
+  border-bottom: 2px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buy-item-right-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-item-text {
+  font-size: 20px;
+}
+
+.buy-item-price {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.item-price-text {
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+.item-price-sub-text {
+  font-size: 12px;
+}
+
+.item-payment {
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid #f5f5f5;
+  font-weight: bold;
+}
+
+.item-payment-title {
+  font-size: 20px;
+}
+
+.item-payment-price {
+  font-size: 25px;
+}
+
+.quiz_index {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 10px;
+  background-color: paleturquoise;
+}
+
+
+
+
+
 
 
 /*# sourceMappingURL=bootstrap.css.map */

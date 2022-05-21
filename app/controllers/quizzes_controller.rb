@@ -1,6 +1,7 @@
 class QuizzesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :new, :destroy]
-  before_action :set_quiz, only: [:edit, :show, :update, :destroy]
+  before_action :set_quiz, only: [:edit, :show, :update, :destroy, :indexfinish , :indexfinish2]
+  before_action :move_to_index_edit, only: [:edit]
 
 
   def index
@@ -23,11 +24,6 @@ class QuizzesController < ApplicationController
       render :new
     end
   end
-
-
-  def indexfinish
-  end
-
 
   def destroy
     if current_user.id == @quiz.user_id
@@ -52,6 +48,11 @@ class QuizzesController < ApplicationController
     end
   end
 
+  def indexfinish
+  end
+
+  def indexfinish2
+  end
 
   private
 
@@ -64,29 +65,7 @@ class QuizzesController < ApplicationController
                                  :answer_number).merge(user_id: current_user.id)
   end
 
-
-  # def index
-  #   @items = Item.all
-  # end
-
-  # def new
-  #   @item = Item.new
-  # end
-
-  # def create
-  #   @item = Item.new(item_params)
-  #   if @item.save
-  #     redirect_to root_path
-  #   else
-  #     render :new
-  #   end
-  # end
-
-  # private
-
-  # def item_params
-  #   params.require(:item).permit(:title, :problem, :answer1, :answer2, :answer3, :answer4, :commentary,
-  #                                    :answer_number).merge(user_id: current_user.id)
-  # end
-
+  def move_to_index_edit
+    redirect_to action: :index if current_user.id != @quiz.user_id
+  end
 end
