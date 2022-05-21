@@ -1,8 +1,7 @@
 class QuizzesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :new, :destroy]
-  before_action :set_quiz, only: [:edit, :show, :update, :destroy, :indexfinish , :indexfinish2]
+  before_action :set_quiz, only: [:edit, :show, :update, :destroy, :indexfinish, :indexfinish2]
   before_action :move_to_index_edit, only: [:edit]
-
 
   def index
     @quizzes = Quiz.all
@@ -14,7 +13,6 @@ class QuizzesController < ApplicationController
 
   def show
   end
-
 
   def create
     @quiz = Quiz.new(quiz_params)

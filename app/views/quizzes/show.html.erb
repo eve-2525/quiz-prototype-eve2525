@@ -30,13 +30,12 @@
 
 
     <%= link_to "クイズに挑む", indexfinish_quiz_path(@quiz.id) ,class:"item-red-btn"%>
+        <% if user_signed_in? %>
   <% if current_user.id == @quiz.user_id %>
     <%= link_to "クイズの編集", edit_quiz_path(@quiz.id), method: :get, class: "item-blue-btn" %>
     <p class="or-text">or</p>
     <%= link_to "削除", quiz_path(@quiz.id), method: :delete, class:"item-destroy" %>
         <% end %>
-
+        <% end %>
 </div>
 </div>
-
-
