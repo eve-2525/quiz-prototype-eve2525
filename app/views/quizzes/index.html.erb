@@ -75,33 +75,29 @@
       </div>
 
 
-<%# new_quizs_path クイズ投稿リンク先 %>
 
-      <!-- Navbar
-  ================================================== -->
-      <section class="bs-docs-section clearfix">
         <div class="row">
           <div class="col-lg-12">
             <div class="page-header">
               <h1 id="navbars">クイズ一覧</h1>
             </div>
 
+         </div>
+    </div>
 
-  <ul class='item-lists'>
 
 
       <% @quizzes.reverse.each do |quiz| %>
-      <li class='list'>
+
         <%= link_to quiz_path(quiz.id) do %>
-            <div class="bs-component">
+
               <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <h3 class='item-name'>
             <%= quiz.title %>
           </h3>
-                          </div>
               </nav>
-          </div>
-    </div>
+
+
           <% end %>
      <% end %>
 
