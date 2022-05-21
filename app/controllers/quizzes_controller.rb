@@ -1,7 +1,6 @@
 class QuizzesController < ApplicationController
-
-
   before_action :authenticate_user!, only: [:edit, :new, :destroy]
+  before_action :set_quiz, only: [:edit, :show, :update, :destroy]
 
 
   def index
@@ -10,6 +9,9 @@ class QuizzesController < ApplicationController
 
   def new
     @quiz = Quiz.new
+  end
+
+  def show
   end
 
 
@@ -22,7 +24,17 @@ class QuizzesController < ApplicationController
     end
   end
 
+
+  def indexfinish
+  end
+
+
+
   private
+
+  def set_quiz
+    @quiz = Quiz.find(params[:id])
+  end
 
   def quiz_params
     params.require(:quiz).permit(:title, :problem, :answer1, :answer2, :answer3, :answer4, :commentary,

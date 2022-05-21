@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   root to: "quizzes#index"
 
-  resources :quizzes, only: [:index, :new, :create]
+  resources :quizzes do
+
+  member do
+    get 'indexfinish'
+    end
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
