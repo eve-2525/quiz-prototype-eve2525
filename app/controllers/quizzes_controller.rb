@@ -29,6 +29,12 @@ class QuizzesController < ApplicationController
   end
 
 
+  def destroy
+    if current_user.id == @quiz.user_id
+      @quiz.destroy
+      redirect_to action: :index
+    end
+  end
 
   private
 
